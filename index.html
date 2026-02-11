@@ -77,11 +77,12 @@
     <input type="file" accept="image/*" multiple id="galleryInput" />
 
     <div class="actions">
-      <button type="button" id="sendMailLocal" class="btn-secondary">📧 E‑Mail öffnen (ohne Bilder)</button>
       <button type="button" id="sendMailServer" class="btn-primary">📤 E‑Mail mit Bildern senden</button>
     </div>
-    <p class="hint">Hinweis: Der obere Button öffnet nur die Mail‑App (Standard), <strong>ohne Anhänge</strong>. Der untere Button sendet <strong>alle Bilder als Anhang</strong> über unseren sicheren Versanddienst.</p>
+    <p class="hint">Die Bilder werden serverseitig als Anhänge gesendet. Bitte Internetverbindung sicherstellen.</p>
   </form>
+
+  <div id="status" class="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>

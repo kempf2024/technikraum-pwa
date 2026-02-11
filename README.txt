@@ -1,8 +1,9 @@
 
-BEREITS KONFIGURIERT: Diese Version enthält deine Apps‑Script‑URL.
+Diese Version entfernt den "E‑Mail öffnen (ohne Bilder)"‑Button.
+App ist mit deiner Apps‑Script‑URL vorkonfiguriert. Einfach hochladen und testen.
 
-1) Dateien EINZELN ins GitHub‑Repo hochladen (Root):
-   - index.html, style.css, app.js, manifest.json, service-worker.js, logo.png
-2) logo.png später durch das echte Logo ersetzen.
-3) Seite aufrufen → Formular ausfüllen → Bilder wählen → "E‑Mail mit Bildern senden".
-
+Unzustellbar? Prüfen:
+1) Empfänger: Aufnahme@herbstritt-haustechnik.de korrekt?
+2) In Apps Script unter View → Executions nachsehen (Fehler?)
+3) Test an eigene Adresse senden (MailApp.sendEmail anpassen) 
+4) Quota: MailApp.getRemainingDailyQuota() prüfen (optional in Logger)
