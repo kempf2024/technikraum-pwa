@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2a6f84" />
+  <title>Heizungsaufnahme – Herbstritt Haustechnik</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png" />
+  <style>
+    :root{
+      --brand-dark:#2a6f84; /* Dunkelblau */
+      --brand-mint:#e3f6f2; /* Mint */
+      --border:#7da5b0;
+      --text:#0f2f38;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--brand-mint);margin:0;color:var(--text)}
+    header{background:var(--brand-dark);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
+    header img{height:48px;flex:0 0 auto}
+    header h1{font-size:20px;margin:0}
+    main{padding:16px;max-width:900px;margin:0 auto}
+    fieldset{border:1px solid var(--border);border-radius:8px;padding:16px;margin:12px 0;background:#fff}
+    legend{padding:0 6px;color:var(--brand-dark);font-weight:bold}
+    label{display:block;font-weight:600;margin-top:12px}
+    input,select,textarea{width:100%;padding:10px;border-radius:6px;border:1px solid var(--border);margin-top:6px}
+    textarea{min-height:90px}
+    .row{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:720px){.row{grid-template-columns:1fr 1fr}}
+    .image-field{margin-top:8px}
+    .btn{margin-top:18px;width:100%;padding:14px;background:var(--brand-dark);color:#fff;border:none;border-radius:8px;font-size:16px}
+    .note{font-size:12px;color:#355e6a;margin-top:6px}
+    footer{padding:24px 16px;color:#666;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Herbstritt Haustechnik Logo" />
+    <h1>Heizungsaufnahme</h1>
+  </header>
+
+  <main>
+    <form id="form">
+      <fieldset>
+        <legend>Allgemeine Daten</legend>
+        <div class="row">
+          <div>
+            <label for="mitarbeiter">Mitarbeiter</label>
+            <input id="mitarbeiter" name="Mitarbeiter" autocomplete="name" />
+          </div>
+          <div>
+            <label for="kunde">Name Kunde</label>
+            <input id="kunde" name="Name Kunde" />
+          </div>
+        </div>
+        <label for="adresse">Adresse Kunde</label>
+        <input id="adresse" name="Adresse Kunde" autocomplete="street-address" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Anlagendaten</legend>
+        <div class="row">
+          <div>
+            <label for="hk_typ">Hersteller + Typ Heizkessel</label>
+            <input id="hk_typ" name="Hersteller + Typ Heizkessel" />
+          </div>
+          <div>
+            <label for="br_typ">Hersteller + Typ Brenner</label>
+            <input id="br_typ" name="Hersteller + Typ Brenner" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="baujahr">Baujahr Heizkessel</label>
+            <input id="baujahr" name="Baujahr Heizkessel" />
+          </div>
+          <div>
+            <label for="sn_hk">Seriennummer Heizkessel</label>
+            <input id="sn_hk" name="Seriennummer Heizkessel" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="sn_br">Seriennummer Brenner</label>
+            <input id="sn_br" name="Seriennummer Brenner" />
+          </div>
+          <div>
+            <label for="leistung">Leistung der Heizungsanlage</label>
+            <input id="leistung" name="Leistung der Heizungsanlage" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="pumpe1">Typ Heizkreispumpe 1</label>
+            <input id="pumpe1" name="Typ Heizkreispumpe 1" />
+          </div>
+          <div>
+            <label for="pumpe2">Typ Heizkreispumpe 2</label>
+            <input id="pumpe2" name="Typ Heizkreispumpe 2" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="bw_pumpe">Typ Brauchwasserladepumpe</label>
+            <input id="bw_pumpe" name="Typ Brauchwasserladepumpe" />
+          </div>
+          <div>
+            <label for="zirk_pumpe">Typ Zirkulationspumpe</label>
+            <input id="zirk_pumpe" name="Typ Zirkulationspumpe" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="anlage">Art der Anlage (Öl, Erdgas, Flüssiggas, Pellets, Scheitholz ...)</label>
+            <input id="anlage" name="Art der Anlage" />
+          </div>
+          <div>
+            <label for="tws">Größe Trinkwasserspeicher</label>
+            <input id="tws" name="Größe Trinkwasserspeicher" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="puffer">Größe Pufferspeicher</label>
+            <input id="puffer" name="Größe Pufferspeicher" />
+          </div>
+          <div>
+            <label for="oeltanks">Größe und Anzahl Öltanks</label>
+            <input id="oeltanks" name="Größe und Anzahl Öltanks" />
+          </div>
+        </div>
+        <label for="zustand">Wie ist der allgemeine Zustand der Anlage?</label>
+        <textarea id="zustand" name="Allgemeiner Zustand der Anlage"></textarea>
+        <label for="erneuerung">Wo ist Potenzial für Erneuerung an der Heizungsanlage?</label>
+        <textarea id="erneuerung" name="Potenzial für Erneuerung"></textarea>
+        <label for="angebot">Kunde möchte ein Angebot für...</label>
+        <input id="angebot" name="Kunde möchte ein Angebot für" />
+        <label for="enthaertung">Enthärtungsanlage vorhanden?</label>
+        <select id="enthaertung" name="Enthärtungsanlage vorhanden?">
+          <option>Ja</option>
+          <option>Nein</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Fotos</legend>
+        <div class="image-field">
+          <label for="cam_pics">Bilder aufnehmen (Kamera)</label>
+          <input id="cam_pics" type="file" accept="image/*" capture="environment" multiple name="cam_pics" />
+          <div class="note">Hinweis: Auf iOS ggf. „Kamera“ auswählen, auf Android öffnet sich die Kamera automatisch.</div>
+        </div>
+        <div class="image-field">
+          <label for="gal_pics">Bilder aus Galerie</label>
+          <input id="gal_pics" type="file" accept="image/*" multiple name="gal_pics" />
+        </div>
+      </fieldset>
+
+      <button type="button" class="btn" id="btn-pdf">PDF erstellen</button>
+      <div class="note">Es wird nur eine PDF erstellt und heruntergeladen – kein Versand per E‑Mail.</div>
+    </form>
+  </main>
+
+  <footer>
+    © Herbstritt Haustechnik – PWA für Monteure
+  </footer>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    // Service Worker registrieren (PWA)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+
+    document.getElementById('btn-pdf').addEventListener('click', generatePDF);
+
+    async function generatePDF(){
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      let y = 15;
+
+      // Logo oben rechts
+      try {
+        const logoData = await loadImageAsDataURL('assets/logo.png');
+        pdf.addImage(logoData, 'PNG', pageWidth - 60, 6, 50, 20);
+      } catch(e) { /* ignore */ }
+
+      // Titel
+      pdf.setFontSize(16);
+      pdf.text('Heizungsaufnahme – Herbstritt Haustechnik', 10, y);
+      y += 8;
+      pdf.setDrawColor(42,111,132); pdf.line(10, y, pageWidth - 10, y); y += 6;
+      pdf.setFontSize(12);
+
+      // Felder in definierter Reihenfolge
+      const fields = [
+        'Mitarbeiter','Name Kunde','Adresse Kunde',
+        'Hersteller + Typ Heizkessel','Hersteller + Typ Brenner','Baujahr Heizkessel',
+        'Seriennummer Heizkessel','Seriennummer Brenner','Typ Heizkreispumpe 1','Typ Heizkreispumpe 2',
+        'Typ Brauchwasserladepumpe','Typ Zirkulationspumpe','Art der Anlage','Größe Trinkwasserspeicher',
+        'Größe Pufferspeicher','Leistung der Heizungsanlage','Größe und Anzahl Öltanks',
+        'Allgemeiner Zustand der Anlage','Potenzial für Erneuerung','Kunde möchte ein Angebot für','Enthärtungsanlage vorhanden?'
+      ];
+
+      const form = document.getElementById('form');
+      for (const name of fields){
+        const el = form.querySelector(`[name="${name}"]`);
+        if(!el) continue;
+        const value = (el.value || '').trim();
+        if(value){
+          // Textumbruch
+          const lines = pdf.splitTextToSize(`${name}: ${value}`, pageWidth - 20);
+          for (const line of lines){
+            if (y > pageHeight - 15){ pdf.addPage(); y = 15; }
+            pdf.text(line, 10, y); y += 6;
+          }
+        }
+      }
+
+      // Bilder (Kamera + Galerie)
+      const camFiles = form.querySelector('#cam_pics').files;
+      const galFiles = form.querySelector('#gal_pics').files;
+      const allFiles = [...camFiles, ...galFiles];
+
+      if(allFiles.length){
+        if (y > pageHeight - 20){ pdf.addPage(); y = 15; }
+        pdf.setFontSize(14); pdf.text('Fotos', 10, y); y += 6;
+      }
+
+      for(const file of allFiles){
+        if(!file || !file.type.startsWith('image/')) continue;
+        const dataUrl = await fileToDataURL(file);
+        const dims = await getImageDimensions(dataUrl);
+        // Maximalbreite 180mm, Seitenränder 10mm
+        const maxW = pageWidth - 20; // 10mm links + 10mm rechts
+        let w = maxW;
+        let h = w * (dims.h / dims.w);
+        // Wenn zu hoch, anpassen
+        if (h > pageHeight - 30){
+          h = pageHeight - 30;
+          w = h * (dims.w / dims.h);
+        }
+        if (y + h > pageHeight - 10){ pdf.addPage(); y = 15; }
+        pdf.addImage(dataUrl, 'JPEG', 10, y, w, h);
+        y += h + 6;
+      }
+
+      pdf.save('Heizungsaufnahme.pdf');
+    }
+
+    function fileToDataURL(file){
+      return new Promise((resolve,reject)=>{
+        const r = new FileReader();
+        r.onload = () => resolve(r.result);
+        r.onerror = reject;
+        r.readAsDataURL(file);
+      });
+    }
+
+    function loadImageAsDataURL(url){
+      return new Promise((resolve, reject)=>{
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = ()=>{
+          const c = document.createElement('canvas');
+          c.width = img.naturalWidth; c.height = img.naturalHeight;
+          const ctx = c.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          resolve(c.toDataURL('image/png'));
+        };
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+
+    function getImageDimensions(src){
+      return new Promise((resolve)=>{
+        const img = new Image();
+        img.onload = ()=> resolve({w: img.naturalWidth, h: img.naturalHeight});
+        img.src = src;
+      });
+    }
+  </script>
+</body>
+</html>
