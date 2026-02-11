@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technikraum Aufnahme – Herbstritt Haustechnik</title>
 
-<link rel="stylesheet" href="style.css" />
-<link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#63E0C0" />
-
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#63E0C0">
 </head>
 <body>
 
@@ -17,120 +16,19 @@
     <h1>Technikraum Aufnahme</h1>
 </header>
 
-<form id="aufnahmeForm">
+<div style="padding:20px; text-align:center;">
 
-<h2>Allgemein</h2>
-<label>Mitarbeiter</label>
-<input type="text" name="mitarbeiter" required>
+    <p style="font-size:18px; margin-bottom:30px;">
+        Bitte auf den Button drücken, um das Formular zu öffnen.
+    </p>
 
-<label>Datum</label>
-<input type="date" name="datum" required>
+    <a href="https://forms.gle/87zgADcdkVnWFnBu8" target="_blank">
+        <button style="width:100%; padding:20px; background:#124A74; color:white; border:none; border-radius:10px; font-size:20px;">
+            🚀 Formular öffnen
+        </button>
+    </a>
 
-<label>Kundenname</label>
-<input type="text" name="kundenname" required>
-
-<label>Adresse</label>
-<input type="text" name="adresse" required>
-
-<h2>Heizungsdaten</h2>
-
-<label>Heizart</label>
-<select name="heizart" required>
-<option>Öl</option>
-<option>Gas</option>
-<option>Pellets</option>
-<option>Holz</option>
-<option>Wärmepumpe</option>
-</select>
-
-<label>Hersteller + Typ Heizung</label>
-<input type="text" name="hersteller_heizung">
-
-<label>Hersteller + Typ Brenner</label>
-<input type="text" name="hersteller_brenner">
-
-<label>Seriennummer Kessel</label>
-<input type="text" name="sn_kessel">
-
-<label>Seriennummer Brenner</label>
-<input type="text" name="sn_brenner">
-
-<label>Größe Warmwasserspeicher</label>
-<input type="text" name="wws">
-
-<label>Größe Pufferspeicher</label>
-<input type="text" name="puffer">
-
-<label>Öltank Größe / Material / Anzahl</label>
-<input type="text" name="oeltank">
-
-<label>Schmalster Durchgang bis Heizraum</label>
-<input type="text" name="durchgang">
-
-<label>Enthärtungsanlage vorhanden?</label>
-<select name="enthaertung">
-<option>Ja</option>
-<option>Nein</option>
-</select>
-
-<h2>Bilder</h2>
-
-<label>Fotos mit Kamera aufnehmen</label>
-<input type="file" accept="image/*" capture="environment" multiple id="cameraInput">
-
-<label>Bilder aus Galerie auswählen</label>
-<input type="file" accept="image/*" multiple id="galleryInput">
-
-<button type="button" id="sendMailBtn">
-📧 E-Mail erstellen & senden
-</button>
-
-</form>
-
-<script>
-document.getElementById("sendMailBtn").addEventListener("click", async () => {
-
-    const form = document.getElementById("aufnahmeForm");
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    // Text für E-Mail zusammenbauen
-    let body = 
-`Technikraum Aufnahme
-
-Mitarbeiter: ${data.mitarbeiter}
-Datum: ${data.datum}
-Kundenname: ${data.kundenname}
-Adresse: ${data.adresse}
-
---- Heizungsdaten ---
-Heizart: ${data.heizart}
-Heizung: ${data.hersteller_heizung}
-Brenner: ${data.hersteller_brenner}
-Seriennummer Kessel: ${data.sn_kessel}
-Seriennummer Brenner: ${data.sn_brenner}
-Warmwasserspeicher: ${data.wws}
-Pufferspeicher: ${data.puffer}
-Öltank: ${data.oeltank}
-Schmalster Durchgang: ${data.durchgang}
-Enthärtungsanlage: ${data.enthaertung}
-
-Bilder sind im Anhang.
-`;
-
-    // Bilder sammeln (Kamera + Galerie)
-    const attachments = [
-        ...document.getElementById("cameraInput").files,
-        ...document.getElementById("galleryInput").files
-    ];
-
-    // E-Mail öffnen
-    const mailto = `mailto:Aufnahme@herbstritt-haustechnik.de?subject=Technikraum%20Aufnahme%20${encodeURIComponent(data.kundenname)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-
-    // Bilder hängen sich automatisch an (iOS, Android, Windows)
-});
-</script>
+</div>
 
 </body>
 </html>
