@@ -1,1 +1,42 @@
-<!DOCTYPE html><html><body>Test</body></html>
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Technikraum Aufnahme – Herbstritt Haustechnik</title>
+<link rel='stylesheet' href='style.css'>
+<link rel='manifest' href='manifest.json'>
+<meta name='theme-color' content='#63E0C0'>
+</head>
+<body>
+<header>
+<img src='logo.png' class='logo'>
+<h1>Technikraum Aufnahme</h1>
+</header>
+<form id='aufnahmeForm'>
+<h2>Allgemein</h2>
+<label>Mitarbeiter</label><input type='text' name='mitarbeiter' required>
+<label>Datum</label><input type='date' name='datum' required>
+<label>Kundenname</label><input type='text' name='kundenname' required>
+<label>Adresse</label><input type='text' name='adresse' required>
+<h2>Heizungsdaten</h2>
+<label>Heizart</label><select name='heizart'>
+<option>Öl</option><option>Gas</option><option>Pellets</option><option>Holz</option><option>Wärmepumpe</option>
+</select>
+<label>Hersteller + Typ Heizung</label><input type='text' name='hersteller_heizung'>
+<label>Hersteller + Typ Brenner</label><input type='text' name='hersteller_brenner'>
+<label>Seriennummer Kessel</label><input type='text' name='sn_kessel'>
+<label>Seriennummer Brenner</label><input type='text' name='sn_brenner'>
+<label>Größe Warmwasserspeicher</label><input type='text' name='wws'>
+<label>Größe Pufferspeicher</label><input type='text' name='puffer'>
+<label>Öltank Größe / Material / Anzahl</label><input type='text' name='oeltank'>
+<label>Schmalster Durchgang bis Heizraum</label><input type='text' name='durchgang'>
+<label>Enthärtungsanlage vorhanden?</label><select name='enthaertung'><option>Ja</option><option>Nein</option></select>
+<h2>Bilder</h2>
+<label>Kamera</label><input type='file' accept='image/*' capture='environment' multiple id='cameraInput'>
+<label>Galerie</label><input type='file' accept='image/*' multiple id='galleryInput'>
+<button type='button' id='createPdfBtn'>PDF erstellen & senden</button>
+</form>
+<script src='app.js'></script>
+</body>
+</html>
